@@ -1,0 +1,27 @@
+@import "../../../styles/mixins";
+
+.cardWrapper {
+    display: flex;
+    align-items: flex-start;
+    _background-color: rgba(128, 128, 128, 0.05);
+    width: 100%;
+    min-height: calc(100vh - 48px);
+    padding: 16px;
+}
+
+.card {
+    /* @include backdrop; */
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    _background-color: var(--bg-color);
+    border-radius: var(--border-radius-xlarge);
+    padding: rem(32) rem(24);
+    _box-shadow: var(--shadow-small);
+
+    .title {
+        font-size: rem(28); /* (28 / 16) * 1em; */
+        font-weight: inherit;
+        margin: 0;
+    }
+}

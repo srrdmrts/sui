@@ -1,0 +1,32 @@
+@import "../../../styles/mixins";
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: rem(36);
+    width: rem(36);
+    background: var(--gradient-1);
+    border-radius: rem(18);
+
+    svg {
+        color: white;
+        font-size: rem(24);
+    }
+
+    /* svg:before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: red;
+        border: 2px solid green;
+
+        background-image: var(--gradient-2);
+        background-size: 40px 40px;
+        height: 40px;
+        width: 40px;
+    } */
+}

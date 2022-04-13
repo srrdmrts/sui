@@ -1,0 +1,160 @@
+@import "../../../styles/mixins";
+/* @import "../../../styles/variables"; */
+
+.wrapper {
+    display: inline-flex;
+    flex-direction: column;
+    width: auto;
+    vertical-align: top;
+
+    --color: var(--theme);
+
+    .labelText,
+    .helperText,
+    .invalidText,
+    span {
+        display: flex;
+        align-items: center;
+        height: rem(22);
+        font-size: rem(12);
+    }
+
+    .labelText {
+        font-size: rem(14);
+        align-items: flex-start;
+    }
+
+    .helperText {
+        color: var(--gray);
+    }
+
+    .invalidText {
+        color: var(--red);
+    }
+}
+
+.inputWrapper {
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    width: auto;
+    height: rem(36);
+    padding: 0 rem(12);
+    border: rem(2) solid var(--gray-tp-50);
+    border-radius: rem(6);
+    _background: var(--gray-tp-10);
+
+    &:focus-within,
+    &.active {
+        border-color: var(--color);
+        background: var(--bg-color);
+
+        & > svg {
+            color: var(--color);
+        }
+    }
+
+    &.danger:focus-within,
+    &.danger.active {
+        --color: var(--red);
+    }
+
+    &.success:focus-within,
+    &.success.active {
+        --color: var(--green);
+    }
+
+    &.warning:focus-within,
+    &.warning.active {
+        --color: var(--yellow);
+    }
+
+    .input {
+        font-size: rem(14);
+        outline: none;
+        border: none;
+        width: 100%;
+        height: 100%;
+        color: inherrgb(77, 74, 74);
+        background: transparent;
+        color: inherit;
+
+        &:placeholder-shown + .actionButtons .close {
+            opacity: 0;
+            cursor: default;
+        }
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        &[type="number"] {
+            -moz-appearance: textfield;
+        }
+    }
+
+    .actionButtons {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        .numberButtons {
+            display: inherit;
+            _height: 100%;
+            flex-direction: row;
+            _border: 1px solid red;
+            padding: 0;
+
+            button {
+                padding: 0;
+                margin: 0;
+                outline: none;
+                background: none;
+                border: none;
+                color: inherit;
+                cursor: pointer;
+                height: rem(28);
+                width: rem(28);
+                font-size: rem(16);
+                margin-right: rem(-6);
+
+                &:hover {
+                    border-radius: rem(5);
+                    background: var(--gray-tp-20);
+                }
+
+                &:first-child {
+                    margin-right: rem(1);
+
+                    &:not(:hover) {
+                        _border-left: rem(1) solid var(--gray-tp-20);
+                    }
+                }
+            }
+            svg {
+                margin: 0;
+                font-size: rem(18);
+            }
+        }
+    }
+
+    svg {
+        color: var(--gray);
+        fill: currentColor;
+        font-size: rem(18);
+        flex: 0 0 rem(18);
+        margin-right: rem(8);
+    }
+
+    svg.close {
+        margin-right: 0;
+        margin-left: rem(8);
+        cursor: pointer;
+    }
+}
+
+:global(body.dark) .inputWrapper:not(:focus-within) {
+    _border-color: var(--gray);
+}

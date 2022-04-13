@@ -1,0 +1,19 @@
+@mixin backdrop {
+    background-color: var(--bg-color);
+    @supports ((-webkit-backdrop-filter: saturate(1.8) blur(10px)) or (backdrop-filter: saturate(1.8) blur(10px))) {
+        /* :global(body.dark) & {
+            background-color: hsla(0, 100%, 0%, 0.65);
+        } */
+        background-color: hsla(0, 0%, 100%, 0.85);
+        -webkit-backdrop-filter: saturate(1.8) blur(10px);
+        backdrop-filter: saturate(1.8) blur(10px);
+    }
+}
+
+@function em($pixels, $context: 14) {
+    @return #{$pixels/$context}em;
+}
+
+@function rem($pixels, $context: 16) {
+    @return #{$pixels/$context}rem;
+}

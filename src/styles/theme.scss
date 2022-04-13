@@ -1,0 +1,78 @@
+@import "mixins.scss";
+
+$colors: (
+    theme: rgb(0, 122, 255),
+    blue: rgb(0, 122, 255),
+    green: rgb(52, 199, 89),
+    indigo: rgb(88, 86, 214),
+    orange: rgb(255, 149, 0),
+    pink: rgb(255, 45, 85),
+    purple: rgb(175, 82, 222),
+    red: rgb(255, 59, 48),
+    teal: rgb(90, 200, 250),
+    yellow: rgb(255, 204, 0),
+    gray: rgb(142, 142, 147),
+);
+
+body {
+    /** --- Global CSS Variables --- **/
+    @each $name, $color in $colors {
+        --#{$name}: #{$color};
+        @for $i from 1 through 9 {
+            --#{$name}-shade-#{$i * 10}: #{darken($color, $i * 5)};
+            --#{$name}-tint-#{$i * 10}: #{lighten($color, $i * 5)};
+            --#{$name}-tp-#{$i * 10}: #{transparentize($color, 1 - $i / 10)};
+        }
+    }
+
+    --on-theme: rgba(255, 255, 255);
+
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --breakpoint: var(--breakpoint-lg);
+
+    --zindex-dropdown: 1000;
+    --zindex-sticky: 1020;
+    --zindex-fixed: 1030;
+    --zindex-modal-backdrop: 1040;
+    --zindex-modal: 1050;
+    --zindex-popover: 1060;
+    --zindex-tooltip: 1070;
+
+    --shadow-smallest: 0px 4px 8px rgba(0, 0, 0, 0.12);
+    --shadow-small: 0 5px 10px rgba(0, 0, 0, 0.12);
+    --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
+    --shadow-large: 0 30px 60px rgba(0, 0, 0, 0.12);
+
+    --border-radius: #{rem(5)};
+    --border-radius-large: #{rem(12)};
+    --border-radius-xlarge: #{rem(18)};
+
+    --gradient-1: linear-gradient(225deg, #ff5ea7 36.04%, #010fcb 88.83%, #ff6530 220.3%);
+    --gradient-2: linear-gradient(225deg, var(--yellow), var(--red));
+    --skyDew: linear-gradient(to left, #76c4e2, #85cba8);
+    --twilightDew: linear-gradient(to left, #8176b5, #85cba8);
+    --twilightSky: linear-gradient(to left, #8176b5, #76c4e2);
+    --twilightSunset: linear-gradient(to left, #8176b5, #ba77b1);
+    --twilightDawn: linear-gradient(to left, #8176b5, #f16975);
+    --dawnSunrise: linear-gradient(to left, #f16975, #f69259);
+    --sunriseLightning: linear-gradient(to left, #f69259, #ffdb6f);
+    --dewLightning: linear-gradient(to left, #85cba8, #ffdb6f);
+    /** --- Global CSS Variables --- **/
+
+    /** --- Thematic Variables --- **/
+    --bg-color: #fff;
+    --text-color: #333;
+    --border-color: var(--gray-tp-10);
+    --border: #{rem(1)} solid var(--border-color);
+
+    &.dark {
+        --bg-color: rgb(30, 30, 30);
+        --text-color: #f5f5f7; /* rgb(220, 220, 220) */
+        --border-color: var(--gray-tp-30);
+    }
+    /** --- Thematic Variables --- **/
+}

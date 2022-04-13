@@ -1,0 +1,35 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles/variables.scss";
+
+.ReactModal__Body--open {
+    overflow: hidden;
+}
+
+.ReactModal__Body--open,
+.ReactModal__Html--open {
+  overflow: hidden;
+}
+
+.ReactModal__Overlay {
+    z-index: 1333;
+    overflow: hidden;
+    background-color: rgba(128, 128, 128, .5) !important;
+}
+
+.ReactModal__Content {
+    background: $bg-color;
+    border-radius: none !important;
+}
+
+.ReactModal__Overlay {
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open{
+    opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+    opacity: 0;
+}

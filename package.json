@@ -1,0 +1,72 @@
+{
+    "name": "sdesign",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "classnames": "^2.2.6",
+        "focus-trap-react": "^8.5.0",
+        "focus-visible": "^5.2.0",
+        "focus-within-polyfill": "^5.2.1",
+        "loader": "^2.1.1",
+        "normalize.css": "^8.0.1",
+        "prop-types": "^15.7.2",
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
+        "react-modal": "^3.13.1",
+        "react-polymorphic-box": "^3.0.3",
+        "react-scripts": "4.0.1",
+        "react-table": "^7.6.3",
+        "use-dark-mode": "^2.3.1"
+    },
+    "scripts": {
+        "start": "PORT=3002 react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "icon": "svgr src/assets/icons_used -d src/components/icons --icon --replace-attr-values \"#fff=currentColor\"",
+        "storybook": "start-storybook -p 6006 -s public",
+        "build-storybook": "build-storybook -s public/storybook"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ],
+        "overrides": [
+            {
+                "files": [
+                    "**/*.stories.*"
+                ],
+                "rules": {
+                    "import/no-anonymous-default-export": "off"
+                }
+            }
+        ]
+    },
+    "devDependencies": {
+        "@storybook/addon-actions": "^6.4.21",
+        "@storybook/addon-essentials": "^6.4.21",
+        "@storybook/addon-interactions": "^6.4.21",
+        "@storybook/addon-links": "^6.4.21",
+        "@storybook/node-logger": "^6.4.21",
+        "@storybook/preset-create-react-app": "^3.2.0",
+        "@storybook/react": "^6.4.21",
+        "@storybook/testing-library": "^0.0.9",
+        "@svgr/cli": "^5.5.0",
+        "node-sass": "^4.14.1",
+        "prettier": "^2.2.1",
+        "style-loader": "^2.0.0"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
+}
